@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.ViewReservation"
+             BackgroundColor="{StaticResource MaxVonWhite}"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <StackLayout Margin="15,5,15,0" VerticalOptions="CenterAndExpand">
+            <Label Text="Upcoming reservation"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Subtitle"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,5"/>
+            <ScrollView Margin="15,15,15,0">
+                <StackLayout >
+                    <Grid RowSpacing="10"
+                          Margin="0,0,0,30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Reservation ID</Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="ReservationId"></Label>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Status</Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="status"></Label>
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">CheckOUT Location</Label>
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="CheckOutLocation"></Label>
+
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">CheckOUT Date Time</Label>
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="CheckOutDate"></Label>
+
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">CheckIN Location</Label>
+                        <Label Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="CheckInLocation"></Label>
+
+                        <Label Grid.Row="5"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">CheckIN Date Time</Label>
+                        <Label Grid.Row="5"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="CheckInDate"></Label>
+
+                        <Label Grid.Row="6"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Created Date Time</Label>
+                        <Label Grid.Row="6"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="CreateDate"></Label>
+
+                        <Label Grid.Row="7"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Vehicle Type</Label>
+                        <Label Grid.Row="7"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="VehicleType"></Label>
+
+                        <Label Grid.Row="8"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">No of Days</Label>
+                        <Label Grid.Row="8"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="NoOfDays"></Label>
+
+                        <Label Grid.Row="9"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Total Rental Fee</Label>
+                        <Label Grid.Row="9"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="TotalRentalFee"></Label>
+
+                        <Label Grid.Row="10"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Discount</Label>
+                        <Label Grid.Row="10"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="Discount"></Label>
+
+                        <Label Grid.Row="11"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Total Mis.Charges</Label>
+                        <Label Grid.Row="11"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="TotalMisCharge"></Label>
+
+                        <Label Grid.Row="12"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Total Tax Charges</Label>
+                        <Label Grid.Row="12"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="TotalTaxCharge"></Label>
+
+                        <Label Grid.Row="13"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Grand Total</Label>
+                        <Label Grid.Row="13"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="GrandTotal"></Label>
+
+                        <Label Grid.Row="14"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Advance Paid</Label>
+                        <Label Grid.Row="14"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="AdvancePaid"></Label>
+
+                        <Label Grid.Row="15"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Balance Due</Label>
+                        <Label Grid.Row="15"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="BalanceDue"></Label>
+                        
+                       
+                    </Grid>
+                    <Button Text="Cancel reservation"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="cancelBtn"
+                                Clicked="CancelBtn_Clicked"
+                            IsVisible="False"></Button>
+
+                    <Button Text="Edit reservation"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="editBtn"
+                                Margin="0,5,0,0"
+                                Clicked="editBtn_Clicked"></Button>
+
+                    <Button Text="Back to Homepage"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="homeBtn"
+                                Margin="0,5,0,30"
+                                Clicked="HomeBtn_Clicked"></Button>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

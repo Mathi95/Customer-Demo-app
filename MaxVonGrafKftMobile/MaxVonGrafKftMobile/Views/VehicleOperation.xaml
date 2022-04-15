@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.VehicleOperation">
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Aspect="Fill"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="Android,Windows">
+                            <OnIdiom
+                                x:TypeArguments="ImageSource"
+                                Phone="{local:EmbeddedImage ResourceId=Navotar.KeyLess.Demo.Assets.BgHomeScreen.png}"
+                                Tablet="{local:EmbeddedImage ResourceId=Navotar.KeyLess.Demo.Assets.bgHomeTablet.png}" />
+                        </On>
+                    </OnPlatform>
+                </Image.Source>
+            </Image>
+            <ScrollView VerticalOptions="Fill">
+                <StackLayout>
+
+                        <Label Text="Keyless Operation" 
+                               Margin="30,0,10,30" 
+                               FontFamily="Roboto-Medium"
+                               HeightRequest="70" FontSize="Title" TextColor="DarkBlue" />
+                        <Image
+                        x:Name="logoImage"
+                        Margin="30,20,10,20"
+                        Aspect="AspectFit"
+                        HeightRequest="120"
+                        HorizontalOptions="FillAndExpand"
+                            Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.tesla1.png}"
+                        VerticalOptions="StartAndExpand" />
+
+                    <Grid RowSpacing="10" Margin="20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Vehicle</Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="vehiclenameEntry" ></Label>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">Vehicle Type</Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="VehicleTypeEntry" ></Label>
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}">License No</Label>
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="licenceNoEntry"></Label>
+
+                    </Grid>
+
+                    <Grid 
+                    Margin="20,50,20,20"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Fill">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Button
+                            x:Name="StartVehicleBtn"
+                            Grid.Row="0"
+                            Margin="0,0,0,0"
+                            BackgroundColor="{StaticResource MaxVonYellow}"
+                            BorderWidth="0"
+                            Clicked="StartVehicleBtn_Clicked"
+                            CornerRadius="10"
+                            FontFamily="Roboto-Medium"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            StyleClass="bouncy"
+                            Text="START VEHICLE"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            VerticalOptions="End">
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="14"
+                                            Tablet="18" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="16"
+                                            Tablet="20" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.FontSize>
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
+
+                            <Button
+                            x:Name="StopVehicleBtn"
+                            Grid.Row="1"
+                            Margin="0,0,0,0"
+                            BackgroundColor="{StaticResource MaxVonYellow}"
+                            BorderWidth="0"
+                            Clicked="StopVehicleBtn_Clicked"
+                            CornerRadius="10"
+                            FontFamily="Roboto-Medium"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            StyleClass="bouncy"
+                            Text="STOP VEHICLE"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            VerticalOptions="End">
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="14"
+                                            Tablet="18" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="16"
+                                            Tablet="20" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.FontSize>
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
+
+
+                            <Button
+                            x:Name="LockVehicleBtn"
+                            Grid.Row="2"
+                            Margin="0,0,0,0"
+                            BackgroundColor="{StaticResource MaxVonYellow}"
+                            BorderWidth="0"
+                            Clicked="LockVehicleBtn_Clicked"
+                            CornerRadius="10"
+                            FontFamily="Roboto-Medium"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            StyleClass="bouncy"
+                            Text="LOCK VEHICLE"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            VerticalOptions="End">
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="14"
+                                            Tablet="18" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="16"
+                                            Tablet="20" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.FontSize>
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
+
+                            <Button
+                            x:Name="UnLockVehicleBtn"
+                            Grid.Row="3"
+                            Margin="0,0,0,0"
+                            BackgroundColor="{StaticResource MaxVonYellow}"
+                            BorderWidth="0"
+                            Clicked="UnLockVehicleBtn_Clicked"
+                            CornerRadius="10"
+                            FontFamily="Roboto-Medium"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            StyleClass="bouncy"
+                            Text="UNLOCK VEHICLE"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            VerticalOptions="End">
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="14"
+                                            Tablet="18" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="16"
+                                            Tablet="20" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.FontSize>
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
+
+                        </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
